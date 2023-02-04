@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Крестики&amp;Нолики две мудилы в домике" Height="450" Width="335">
+    <Grid HorizontalAlignment="Left" Width="319" Height="482" VerticalAlignment="Center">
+        <Button Name="b1" Content="" Margin="10,67,245,358" Click="Button_Click"/>
+        <Button Name="b2" Content="" Margin="128,67,127,358" Click="Button_Click" />
+        <Button Name="b3" Content="" Margin="245,67,10,358" Click="Button_Click" />
+        <Button Name="b4" Content="" Margin="10,148,245,277" Click="Button_Click" />
+        <Button Name="b5" Content="" Margin="128,148,127,277" Click="Button_Click" />
+        <Button Name="b6" Content="" Margin="245,148,10,277" Click="Button_Click" />
+        <Button Name="b7" Content="" Margin="10,241,245,184" Click="Button_Click" />
+        <Button Name="b8" Content="" Margin="128,241,127,184" Click="Button_Click" />
+        <Button Name="b9" Content="" Margin="245,241,10,184" Click="Button_Click" />
+        <Button Name="b10" Content="Начать заново" Margin="10,380,10,45" Click="Button_Click"/>
+    </Grid>
+</Window>
