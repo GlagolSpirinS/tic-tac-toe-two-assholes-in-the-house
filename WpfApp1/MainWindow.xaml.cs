@@ -20,6 +20,7 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string xOrO = "X";
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace WpfApp1
             }
             else
             {
-                (sender as Button).Content = "X";
+                (sender as Button).Content = xOrO;
                 (sender as Button).IsEnabled = false;
                 if (Winner())
                 {
@@ -53,7 +54,14 @@ namespace WpfApp1
             {
                 jopa = r.Next(0, 9);
             } while (!(buttons[jopa].Content == "" || buttons[jopa].Content == null));
+            if (xOrO == "X")
+            {
             buttons[jopa].Content = "O";
+            }
+            else
+            {
+            buttons[jopa].Content = "X";
+            }
             buttons[jopa].IsEnabled = false;
             if (Winner())
             {
@@ -121,6 +129,14 @@ namespace WpfApp1
             b9.Content = "";
             b9.IsEnabled = true;
 
+            if (xOrO == "X")
+            {
+                xOrO = "O";
+            }
+            else
+            {
+                xOrO = "X";
+            }
 
         }
     }
