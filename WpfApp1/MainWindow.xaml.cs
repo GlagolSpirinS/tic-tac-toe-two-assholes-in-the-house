@@ -29,13 +29,13 @@ namespace WpfApp1
         {
             if ((sender as Button).Name == "b10")
             {
-                ResetGame();
+                End();
             }
             else
             {
                 (sender as Button).Content = "X";
                 (sender as Button).IsEnabled = false;
-                if (CheckForWinner())
+                if (Winner())
                 {
                     return;
                 }
@@ -55,13 +55,13 @@ namespace WpfApp1
             } while (!(buttons[jopa].Content == "" || buttons[jopa].Content == null));
             buttons[jopa].Content = "O";
             buttons[jopa].IsEnabled = false;
-            if (CheckForWinner())
+            if (Winner())
             {
                 return;
             }
         }
 
-        private bool CheckForWinner()
+        private bool Winner()
         {
             Button[] buttons = new Button[] { b1, b2, b3, b4, b5, b6, b7, b8, b9 };
             string[] lines = new string[]
@@ -81,26 +81,26 @@ namespace WpfApp1
                 if (line == "XXX")
                 {
                     MessageBox.Show("ХРОМОСОМА ВЫЙГРАЛА");
-                    ResetGame();
+                    End();
                     return true;
                 }
                 else if (line == "OOO")
                 {
                     MessageBox.Show("НОЛИК ВЫЙГРАЛ");
-                    ResetGame();
+                    End();
                     return true;
                 }
             }
             if (!buttons.Any(b => b.Content == "" || b.Content == null))
             {
                 MessageBox.Show("ЗАЧЕМ ИГРАТЬ В ТАКИЕ ИГРЫ");
-                ResetGame();
+                End();
                 return true;
             }
             return false;
         }
 
-        private void ResetGame()
+        private void End()
         {
             b1.Content = "";
             b1.IsEnabled = true;
